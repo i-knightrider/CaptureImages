@@ -26,7 +26,7 @@ function onDeviceReady() {
     document.getElementById("capture").addEventListener("click", captureImages);
     function captureImages(){
         navigator.device.capture.captureImage(onSuccess, onError, {limit : 10});
-        function onSuccess(){
+        function onSuccess(mediaFiles){
             var i, len, path;
             len = mediaFiles.length;
             for(i = 0 ; i < len ; i++){
@@ -39,7 +39,7 @@ function onDeviceReady() {
         }
     }
     //Sir's code
-    //this will run in browser and phone
+    //this will run in browser and phone    
     document.getElementById('takePicture').addEventListener('click', takeCameraPicture);
     function takeCameraPicture() {
         var qty = {quantity: 50};
